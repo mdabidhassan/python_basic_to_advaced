@@ -22,24 +22,26 @@ def determine_winner(user, computer):
         return "You win!"
     else:
         return "You lose!"
+
 def play_game():
-        print("Welcome to Rock-Paper-Scissors!")
-        while True:
-            user_choice = get_user_choice()
-            if not user_choice:
-                print("Invalid choice. Please choose again.")
-                continue
-computer_choice = get_computer_choice()
+    print("Welcome to Rock-Paper-Scissors!")
+    while True:
+        user_choice = get_user_choice()
+        if not user_choice:
+            print("Invalid choice. Please choose again.")
+            continue
+
+        computer_choice = get_computer_choice()
         print(f"You chose: {user_choice}")
         print(f"Computer chose: {computer_choice}")
 
         result = determine_winner(user_choice, computer_choice)
         print(result)
 
-play_again = input("Do you want to play again? (yes/no): ").lower()
-if play_again != "yes":
-    print("Thanks for playing!")
-    break
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != "yes":
+            print("Thanks for playing!")
+            break
 
- if __name__ == "__main__":
-        play_game()
+if __name__ == "__main__":
+    play_game()
